@@ -2,8 +2,8 @@ List of commands that are used in Java for problem-solving for competitive progr
 
 String class
 
-| Tables        | Are           | Cool  |
+| No.        | Method           | Description  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 1      | char s1.charAt(int index) | returns char value for the particular index |
+| 2      | centered      |   $12 |
+| 3 | are neat      |    $1 |
