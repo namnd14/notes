@@ -2,12 +2,16 @@ Varargs Java 5
 
 => support an arbitrary number of parameters of one type.
 
+````
 public String formatWithVarArgs(String... values) {
     // ...
 }
+````
 
 formatWithVarArgs();
+<br>
 formatWithVarArgs("a", "b", "c", "d");
+<br>
 // both are valid
 
 Rule:

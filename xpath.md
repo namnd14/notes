@@ -1,3 +1,4 @@
+````
 // -> relative xpath, search for all children element
 / -> absolute xpath, search for direct child element only
 * Stands for all element
@@ -8,3 +9,4 @@
 //*[contains(@class, ‘class-name’)]
 combine example
 //*[@class='myclass' and contains(text(),'qwerty')]
+````

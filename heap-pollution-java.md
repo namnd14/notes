@@ -5,7 +5,8 @@ Heap pollution in Java can occur when type arguments and variables are not reifi
 Under certain conditions, a variable of a parameterized type may refer to an object that is not of that parameterized type. The variable will always refer to an object that is an instance of a class that implements the parameterized type.
 
 Example:
-1.
+
+````
 static String firstOfFirst(List<String>... strings) {
     List<Integer> ints = Collections.singletonList(42);
     Object[] objects = strings;
@@ -13,8 +14,11 @@ static String firstOfFirst(List<String>... strings) {
 
     return strings[0].get(0); // ClassCastException
 }
+````
 
 2.
+
+````
     static <T> T[] toArray(T... arguments) {
         return arguments;
     }
@@ -24,6 +28,7 @@ static String firstOfFirst(List<String>... strings) {
     }
 
     String[] args = returnAsIs("One", "Two"); => // ClassCastException
+````
 
 Explain:
 - To pass a and b to the toArray method, Java needs to create an array
@@ -32,6 +37,7 @@ Explain:
 - Since the call site expects a String[], the compiler tries to cast the Object[] to the expected String[], hence the ClassCastException
 
 3.
+````
 public class HeapPollutionDemo
 {
     public static void main(String[] args)
@@ -48,3 +54,4 @@ public class HeapPollutionDemo
         }
     }
 }
+````

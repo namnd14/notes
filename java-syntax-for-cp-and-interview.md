@@ -8,7 +8,7 @@ https://github.com/withPrasheel/lastMinuteJavaSyntax
 
 Small demo how to create a table view in md file by using markdown syntax
 <br>
-String class
+<b>String class<b>
 
 | No. | Method                                                 | Description                                                                  |
 |-----|:-------------------------------------------------------|:-----------------------------------------------------------------------------|

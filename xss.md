@@ -3,6 +3,7 @@ XSS: Cross-site scripting
 ![alt text](./image/xss.png)
 
 attacker attachs code (JS code) onto a validated website on victim's browser
+<br>
 => script run with authority => send private data back to attacker
 
 Example: A website have unvalidated comment forums. In this case, an attacker will post a comment consisting of executable code wrapped in <script></script> tags. Once that comment is on page, when any other user loads that website, the malicious code will be executed by their web browser => they will become a victim
@@ -19,12 +20,14 @@ Ex: http://legitamite-bank.com/index.php?user=<script>here is some bad code!</sc
 - Persistent cross-site scripting
 This happens on sites that let users post content that other users will see, such as a comments forum or social media site, for example. If the site doesn’t properly validate the inputs for user-generated content, an attacker can insert code that other users’ browsers will execute when the page loads.
 Ex:
+````
     <div>
         <h1>Comment section</h1>
         <p>
             This is real comment of user <script>console.log("we can access the website!")</script>
         <p>
     </div>
+````
 
 How to prevent cross-site scripting:
 - If possible, avoiding HTML in inputs - One very effective way to avoid persistent cross-site scripting attacks is to prevent users from posting HTML into form inputs. There are other options which let users create rich content without the use of HTML, such as markdown and WYSIWYG editors.
