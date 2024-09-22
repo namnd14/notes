@@ -44,3 +44,10 @@ List in list:
 - item 2
 - - sub item 3
 - item 3
+
+## Markdown highlight inside highlight
+````md
+```js
+let result = [1, 2, 3].map(item => item * 2);
+```
+````
