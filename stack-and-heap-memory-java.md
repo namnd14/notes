@@ -42,3 +42,6 @@ Key Features of Java Heap Memory:
 - Access to this memory is comparatively slower than stack memory
 - This memory, in contrast to stack, isn’t automatically deallocated. It needs Garbage Collector to free up unused objects so as to keep the efficiency of the memory usage.
 - Unlike stack, a heap isn’t threadsafe and needs to be guarded by properly synchronizing the code.
+
+## More docs
+[Java Heap Memory](https://sematext.com/glossary/jvm-heap/#:~:text=Java%20heap%20memory%20is%20a,accessed%20by%20the%20Java%20application.)
