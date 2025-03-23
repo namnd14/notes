@@ -63,3 +63,30 @@ A wildcard character is used to substitute any other character(s) in a string.
 AS => alias  
 We can alias column names and table names in SQL by using the AS keyword.
 
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.  
+Types of JOIN:  
+- INNER JOIN (default) => returns records that have matching values in both tables
+- LEFT JOIN (or LEFT OUTER JOIN) => returns all records from the left table, and the matched records from the right table
+- RIGHT JOIN (or RIGHT OUTER JOIN) => returns all records from the right table, and the matched records from the left table
+- FULL JOIN (or FULL OUTER JOIN) => returns all records when there is a match in either left (table1) or right (table2) table records
+- CROSS JOIN => returns the Cartesian product of the two tables  
+Example:
+- SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;
+- SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;
+- SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;
+- SELECT column_name(s) FROM table1 FULL JOIN table2 ON table1.column_name = table2.column_name;
+- SELECT column_name(s) FROM table1 CROSS JOIN table2;  
+Note: If add a WHERE clause in the CROSS JOIN, it will work like an INNER JOIN.  
+
+Self JOIN => a regular join, but the table is joined with itself.  
+SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;  
+The T1 and T2 are different table aliases for the same table.  
+
+UNION => used to combine the result-set of two or more SELECT statements.  
+- Each SELECT statement within UNION must have the same number of columns
+- The columns must also have similar data types
+- The columns in each SELECT statement must also be in the same order  
+SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;  
+The UNION operator selects only distinct values by default.  
+UNION ALL => return all rows from the combined result sets of two or more SELECT statements, including duplicate rows.  
+SELECT column_name(s) FROM table1 UNION ALL SELECT column_name(s) FROM table2;  
