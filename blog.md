@@ -8,4 +8,3 @@ https://notes.huy.rocks/
 
 https://www.giaosucan.com/
 
-https://www.huydx.com/
