@@ -80,3 +80,87 @@ public class OrderService {
 }
 ```
 
+Configuration Methods
+1. XML Configuration (Legacy)
+   Define beans in an XML file:
+```xml
+<bean id="paymentProcessor" class="com.example.CreditCardProcessor"/>
+<bean id="orderService" class="com.example.OrderService">
+    <constructor-arg ref="paymentProcessor"/>
+</bean>
+```
+Load with ClassPathXmlApplicationContext.
+2. Annotation-Based Configuration (Modern)
+   Use annotations like @Component, @Service, @Autowired:
+```java
+@Service
+public class OrderService {
+    private final PaymentProcessor paymentProcessor;
+
+    @Autowired
+    public OrderService(PaymentProcessor paymentProcessor) {
+        this.paymentProcessor = paymentProcessor;
+    }
+}
+
+@Component
+public class CreditCardProcessor implements PaymentProcessor {
+    public void process() { /* ... */ }
+}
+```
+Enable with @ComponentScan in a configuration class.
+3. Java-Based Configuration
+   Use @Configuration and @Bean
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public PaymentProcessor paymentProcessor() {
+        return new CreditCardProcessor();
+    }
+
+    @Bean
+    public OrderService orderService(PaymentProcessor paymentProcessor) {
+        return new OrderService(paymentProcessor);
+    }
+}
+```
+Load with AnnotationConfigApplicationContext.
+
+Benefits of IoC in Spring
+- Loose Coupling: Classes depend on abstractions (e.g., interfaces) rather than concrete implementations.
+- Testability: Easy to swap dependencies (e.g., mock PaymentProcessor in tests).
+- Flexibility: Change implementations without modifying dependent code (e.g., switch from CreditCardProcessor to PayPalProcessor).
+- Centralized Management: Spring handles object lifecycle and configuration in one place.
+- Reusability: Beans can be reused across the application.
+
+Spring Boot and IoC  
+Spring Boot enhances IoC with auto-configuration  
+Automatically creates beans for common components (e.g., DataSource, EntityManager) based on dependencies in your pom.xml  
+Example: Add spring-boot-starter-data-jpa, and Spring Boot sets up a JpaTransactionManager bean  
+Use @SpringBootApplication (includes @ComponentScan) to bootstrap the IoC Container.  
+
+Key Annotations
+- @Component: Marks a class as a Spring-managed bean.
+- @Autowired: Injects dependencies.
+- @Qualifier: Resolves ambiguity when multiple beans of the same type exist.
+- @Primary: Marks a preferred bean when multiple implementations are available.
+- @Bean: Defines a bean in a @Configuration class.
+
+IoC Container Lifecycle
+- Startup: Spring scans for beans (via annotations or config) and instantiates them.
+- Dependency Resolution: Injects dependencies into beans.
+- Initialization: Calls @PostConstruct methods or InitializingBean hooks.
+- Usage: Beans are available for the application.
+- Shutdown: Calls @PreDestroy or DisposableBean hooks when the context closes.
+
+Common Pitfalls
+- Ambiguity: Multiple beans of the same type without @Qualifier or @Primary cause errors.
+- Circular Dependencies: Bean A depends on B, and B depends on A—use setter injection or @Lazy to resolve.
+- Manual Instantiation: Calling new bypasses IoC—always let Spring manage beans.
+
+Summary
+- IoC Definition: Control of object creation and management is inverted to Spring’s IoC Container.
+- Implementation: Via Dependency Injection (constructor, setter, field).
+- Purpose: Decouples components, enhances modularity, and simplifies testing.
+- Spring Boot Bonus: Auto-configuration makes IoC even easier.
