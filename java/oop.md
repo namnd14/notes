@@ -1,8 +1,9 @@
-Object-Oriented Programming (OOP) in Java is built around four main characteristics (or principles) that enable modular, 
+## Object-Oriented Programming (OOP) in Java 
+is built around four main characteristics (or principles) that enable modular, 
 reusable, and maintainable code. These are Encapsulation, Inheritance, Polymorphism, and Abstraction. 
 Here’s a breakdown of each:
 
-1. Encapsulation
+## Encapsulation
 - Definition: Encapsulation is the bundling of data (attributes) and methods (behavior) into a single unit (a class), 
 while restricting direct access to some of an object’s components. 
 It’s often achieved using access modifiers (e.g., private, public) and getter/setter methods.
@@ -33,7 +34,7 @@ public class Person {
 ```
 Here, name and age are encapsulated, and access is controlled via methods.
 
-2. Inheritance
+## Inheritance
 - Definition: Inheritance allows a class (subclass/child) to inherit properties and methods from another class (superclass/parent),
 promoting code reuse and establishing a hierarchical relationship.
 - Purpose: Reduces redundancy by letting subclasses share common functionality while adding or overriding specific behavior.
@@ -63,7 +64,7 @@ public class Main {
 ```
 Dog inherits eat() from Animal and adds its own bark() method.
 
-3. Polymorphism
+## Polymorphism
 - Definition: Polymorphism allows objects of different classes to be treated as objects of a common superclass or interface. 
 It means "many forms" and is achieved through method overriding (runtime polymorphism) or method overloading 
 (compile-time polymorphism).
@@ -105,7 +106,7 @@ public class Calculator {
 }
 ```
 
-4. Abstraction
+## Abstraction
 - Definition: Abstraction is the process of hiding complex implementation details and exposing only 
 the essential features of an object. It’s achieved using abstract classes or interfaces.
 - Purpose: Simplifies interaction with objects by focusing on "what" they do rather than "how" they do it, reducing complexity.
@@ -136,7 +137,7 @@ public class Main {
 ```
 Vehicle defines the contract; Car provides the implementation.
 
-Summary (Principle - Key Concept - Java Mechanism - Benefit)  
+## Summary (Principle - Key Concept - Java Mechanism - Benefit)  
 Encapsulation - Data hiding and bundling - private, getters/setters - Security, control  
 Inheritance - Reusing code from a parent class - extends - Code reuse, hierarchy  
 Polymorphism - Multiple forms of a method/object - Overriding, overloading - Flexibility, extensibility  

@@ -1,4 +1,4 @@
-IoC: Inversion of Control  
+## IoC: Inversion of Control  
 => is a fundamental design principle and one of the core concepts in the Spring Framework. In refers to the idea of inverting
 the traditional control flow of an application, where instead of your code directly managing the creation and lifecycle of
 objects (dependencies), this responsibility is delegated to an external entity - typically a container or framework
@@ -31,7 +31,7 @@ public class OrderService {
 ```
 The control of object creation and wiring is "inverted" to Spring.
 
-How IoC Works in Spring  
+## How IoC Works in Spring  
 Spring’s IoC is implemented via its IoC Container (also called the Application Context), which:
 - Reads Configuration: Spring uses configuration metadata (XML, Java annotations, or Java-based config) to understand
 what beans (objects) to create and how to wire them.
@@ -39,12 +39,12 @@ what beans (objects) to create and how to wire them.
 - Manages Dependencies: Injects dependencies into beans automatically.
 - Handles Lifecycle: Manages the lifecycle of beans (e.g., initialization, destruction).
 
-Types of IoC Containers in Spring
+## Types of IoC Containers in Spring
 - BeanFactory: A basic IoC container providing lazy-loaded bean creation (less commonly used).
 - ApplicationContext: An advanced container (most common), extending BeanFactory with features like event propagation,
 internationalization, and eager loading.
 
-Dependency Injection (DI): The Mechanism of IoC  
+## Dependency Injection (DI): The Mechanism of IoC  
 IoC in Spring is primarily achieved through Dependency Injection (DI), a pattern where dependencies are provided 
 to a class rather than the class creating them itself. Spring supports three types of DI:
 - Constructor Injection: Dependencies are provided as constructor parameters.
@@ -80,7 +80,7 @@ public class OrderService {
 }
 ```
 
-Configuration Methods
+## Configuration Methods
 1. XML Configuration (Legacy)
    Define beans in an XML file:
 ```xml
@@ -127,39 +127,39 @@ public class AppConfig {
 ```
 Load with AnnotationConfigApplicationContext.
 
-Benefits of IoC in Spring
+## Benefits of IoC in Spring
 - Loose Coupling: Classes depend on abstractions (e.g., interfaces) rather than concrete implementations.
 - Testability: Easy to swap dependencies (e.g., mock PaymentProcessor in tests).
 - Flexibility: Change implementations without modifying dependent code (e.g., switch from CreditCardProcessor to PayPalProcessor).
 - Centralized Management: Spring handles object lifecycle and configuration in one place.
 - Reusability: Beans can be reused across the application.
 
-Spring Boot and IoC  
+## Spring Boot and IoC  
 Spring Boot enhances IoC with auto-configuration  
 Automatically creates beans for common components (e.g., DataSource, EntityManager) based on dependencies in your pom.xml  
 Example: Add spring-boot-starter-data-jpa, and Spring Boot sets up a JpaTransactionManager bean  
 Use @SpringBootApplication (includes @ComponentScan) to bootstrap the IoC Container.  
 
-Key Annotations
+## Key Annotations
 - @Component: Marks a class as a Spring-managed bean.
 - @Autowired: Injects dependencies.
 - @Qualifier: Resolves ambiguity when multiple beans of the same type exist.
 - @Primary: Marks a preferred bean when multiple implementations are available.
 - @Bean: Defines a bean in a @Configuration class.
 
-IoC Container Lifecycle
+## IoC Container Lifecycle
 - Startup: Spring scans for beans (via annotations or config) and instantiates them.
 - Dependency Resolution: Injects dependencies into beans.
 - Initialization: Calls @PostConstruct methods or InitializingBean hooks.
 - Usage: Beans are available for the application.
 - Shutdown: Calls @PreDestroy or DisposableBean hooks when the context closes.
 
-Common Pitfalls
+## Common Pitfalls
 - Ambiguity: Multiple beans of the same type without @Qualifier or @Primary cause errors.
 - Circular Dependencies: Bean A depends on B, and B depends on A—use setter injection or @Lazy to resolve.
 - Manual Instantiation: Calling new bypasses IoC—always let Spring manage beans.
 
-Summary
+## Summary
 - IoC Definition: Control of object creation and management is inverted to Spring’s IoC Container.
 - Implementation: Via Dependency Injection (constructor, setter, field).
 - Purpose: Decouples components, enhances modularity, and simplifies testing.
