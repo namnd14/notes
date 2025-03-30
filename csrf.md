@@ -41,3 +41,5 @@ Prevent:
 <br>
 implement a mechanisms like CSRF tokens, which are unique tokens generated for each user session to validate the origin
 of a request.
+
+Docs: https://docs.spring.io/spring-security/reference/features/exploits/csrf.html#csrf
