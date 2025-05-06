@@ -171,3 +171,23 @@ grep -n pattern file.txt: search for pattern in file.txt and show line numbers
 
 grep -c pattern file.txt: count the number of lines matching the pattern in file.txt
 
+# sudo
+superuser do
+
+sudo command: run command as superuser
+
+sudo -i: open a root shell
+
+sudo -s: run command as superuser without password prompt
+
+sudo su: switch to root user
+
+sudo su -: switch to root user with login shell
+
+sudo visudo: edit the sudoers file
+
+sudo -l: list allowed commands for the current user
+
+sudo -k: invalidate the user's cached credentials
+
+sudo -u user command: run command as a different user
