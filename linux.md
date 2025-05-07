@@ -191,3 +191,9 @@ sudo -l: list allowed commands for the current user
 sudo -k: invalidate the user's cached credentials
 
 sudo -u user command: run command as a different user
+
+# user
+sudo useradd dev1: add a new user named dev1
+
+sudo passwd dev1: set password for user dev1
+
