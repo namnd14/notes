@@ -1,13 +1,8 @@
-https://vnhacker.substack.com/
-
-https://www.danvega.dev/
-
-https://www.joelonsoftware.com/
-
-https://notes.huy.rocks/
-
-https://www.giaosucan.com/
-
+- https://vnhacker.substack.com/
+- https://www.danvega.dev/
+- https://www.joelonsoftware.com/
+- https://notes.huy.rocks/
+- https://www.giaosucan.com/
 - [Microsoft Engineering](https://engineering.microsoft.com)
 - [Google Research Blog](http://googleresearch.blogspot.com)
 - [Netflix Tech Blog](http://techblog.netflix.com)
@@ -20,7 +15,6 @@ https://www.giaosucan.com/
 - [LinkedIn Engineering](http://engineering.linkedin.com/blog)
 - [Paypal Developer Blog](https://medium.com/paypal-engineering)
 - [Twitter Engineering](https://blog.twitter.com/engineering)
-
 - [Cloudflare learning center](https://www.cloudflare.com/learning)
 - [IBM Blogs](https://www.ibm.com/blogs)
 - [Fastly Blogs](https://www.fastly.com/blog)
