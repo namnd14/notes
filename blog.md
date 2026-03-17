@@ -27,3 +27,4 @@
 - [Martin Fowler](https://martinfowler.com)
 - [PagerDuty resources](https://www.pagerduty.com/resources)
 - [VMWare Blogs](https://blogs.vmware.com/learning)
+- https://developer.microsoft.com/en-us/java
